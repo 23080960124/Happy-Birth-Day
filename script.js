@@ -2,6 +2,21 @@ const openBtn = document.getElementById("openBtn");
 const content = document.getElementById("content");
 const music = document.getElementById("music");
 const gallery = document.getElementById("gallery");
+const countdown = document.getElementById("countdown");
+
+function updateCountdown() {
+  const target = new Date("2026-07-09");
+  const now = new Date();
+
+  const diff = target - now;
+
+  const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+
+  countdown.textContent =
+    `${days} hari lagi menuju hari spesial Mbak Riris ✨`;
+}
+
+updateCountdown();
 
 const captions = {
   2: "Terima kasih sudah selalu ada.",

@@ -12,7 +12,8 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #fffaf5, #ffeef2);
+  background:linear-gradient(rgba(255,250,245,0.92), rgba(255,238,242,0.92)),
+  url("https://www.transparenttextures.com/patterns/paper-fibers.png");
   color: var(--text);
   font-family: "Quicksand", sans-serif;
   overflow-x: hidden;

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Untuk Mbak Riris 💌</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="stars"></div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="subtitle">Untuk perempuan terkuat yang aku kenal</p>
+
+      <h1>Selamat Ulang Tahun ke-25,<br>Mbak Riris 🌷</h1>
+
+      <p class="description">
+        Ada banyak hal yang ingin aku sampaikan.
+        Tapi untuk malam ini, izinkan aku mengucapkannya lewat kenangan.
+      </p>
+
+      <button id="openBtn">Buka Hadiahmu 💌</button>
+    </div>
+  </section>
+
+  <main id="content" class="hidden">
+
+    <section class="gallery-section">
+      <h2>34 Kenangan Kita 📸</h2>
+      <p class="section-desc">
+        Tidak semua momen besar. Tapi semuanya berharga.
+      </p>
+
+      <div id="gallery" class="gallery"></div>
+    </section>
+
+    <section class="letter-section">
+      <div class="letter-card">
+        <h2>Untuk Mbak Riris 💖</h2>
+
+        <div id="typedText"></div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <h2>Sekarang giliran Mbak untuk bahagia ✨</h2>
+
+      <p>
+        Semoga usia 25 membawa lebih banyak ketenangan,
+        kesehatan, kebahagiaan, dan orang-orang baik.
+      </p>
+
+      <p class="signature">
+        Dengan sayang,<br>
+        adikmu 🤍
+      </p>
+    </section>
+
+  </main>
+
+  <div id="modal" class="modal">
+    <span id="closeModal">&times;</span>
+    <img id="modalImg" src="" alt="">
+    <p id="modalCaption"></p>
+  </div>
+
+  <audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -23,7 +23,7 @@ for (let i = 1; i <= 34; i++) {
   card.style.setProperty("--rotate", `${rotate}deg`);
 
   const img = document.createElement("img");
-  img.src = `assets/images/foto${i}.jpg`;
+  img.src = `assets/images/foto${i}.jpeg`;
 
   const caption = document.createElement("p");
   caption.textContent = captions[i] || "🤍";

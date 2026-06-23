@@ -125,6 +125,18 @@ button:hover{
   font-size:1.1rem;
 }
 
+#countdown{
+
+margin-bottom:30px;
+
+font-weight:600;
+
+color:#d98ca4;
+
+font-size:1.1rem;
+
+}
+
 /* ===================== */
 /* 25 TAHUN */
 /* ===================== */
@@ -222,9 +234,9 @@ button:hover{
 
 .photo-card img{
   width:100%;
-  height:280px;
-
-  object-fit:cover;
+  max-height:320px;
+  height:auto;
+  object-fit:contain;
 
   border-radius:8px;
 }
@@ -513,6 +525,44 @@ button:hover{
 
   .closing-box h2{
     font-size:2.2rem;
+  }
+
+}
+#petals{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:1;
+}
+
+.petal{
+
+  position:absolute;
+
+  top:-20px;
+
+  font-size:22px;
+
+  animation:
+  falling linear forwards;
+
+  opacity:.8;
+
+}
+
+@keyframes falling{
+
+  from{
+    transform:
+    translateY(-10vh)
+    rotate(0deg);
+  }
+
+  to{
+    transform:
+    translateY(110vh)
+    rotate(360deg);
   }
 
 }

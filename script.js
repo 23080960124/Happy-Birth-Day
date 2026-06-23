@@ -229,7 +229,10 @@ card.style.transform =
 
 card.innerHTML = `
 <img src="assets/images/foto${i}.jpeg">
-<p>Kenangan #${i}</p>
+
+<p class="caption">
+${captions[i-1]}
+</p>
 `;
 
 card.addEventListener("click",()=>{
@@ -272,8 +275,15 @@ document.getElementById("memoryMessage");
 
 memoryJar.addEventListener("click",()=>{
 
-memoryMessage.textContent =
-memoryMessages[memoryIndex];
+memoryMessage.innerHTML = `
+${memoryMessages[memoryIndex]}
+
+<br><br>
+
+<span class="jarHint">
+Klik lagi untuk membuka harapan berikutnya 🤍
+</span>
+`;
 
 memoryIndex++;
 
@@ -383,7 +393,13 @@ i++;
 setTimeout(showLine,2500);
 
 }
+else{
 
+document
+.getElementById("toClosing")
+.classList.remove("hidden");
+
+}
 }
 
 showLine();
@@ -448,3 +464,18 @@ countdown.textContent =
 "🎂 Hari ini hari spesial Mbak Riris!";
 
 }
+
+document.getElementById("backToOpening")
+.onclick = () => showSection("opening");
+
+document.getElementById("backTo25")
+.onclick = () => showSection("intro25");
+
+document.getElementById("backToScrapbook")
+.onclick = () => showSection("scrapbook");
+
+document.getElementById("backToJar")
+.onclick = () => showSection("memoryJarSection");
+
+document.getElementById("backToLetter")
+.onclick = () => showSection("letterSection");

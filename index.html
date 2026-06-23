@@ -4,86 +4,275 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Untuk Mbak Riris 💌</title>
+  <title>Untuk Mbak Riris 🤍</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div class="floating">🌷</div>
-  <div class="floating delay1">✨</div>
-  <div class="floating delay2">🤍</div>
-  <div class="floating delay3">🌸</div>
-  <div class="stars"></div>
 
-  <section class="hero">
-    <div class="hero-content">
-      <p class="subtitle">Untuk perempuan terkuat yang aku kenal</p>
-      
-      <p id="countdown"></p>
-      
-      <h1>Selamat Ulang Tahun ke-25,<br>Mbak Riris 🌷</h1>
-
-      <p class="description">
-        Ada banyak hal yang ingin aku sampaikan.
-        Tapi untuk malam ini, izinkan aku mengucapkannya lewat kenangan.
-      </p>
-
-      <button id="openBtn">Buka Hadiahmu 💌</button>
-    </div>
-  </section>
-
-  <main id="content" class="hidden">
-
-    <section class="gallery-section">
-      <h2>34 Kenangan Kita 📸</h2>
-      <p class="section-desc">
-        Tidak semua momen besar. Tapi semuanya berharga.
-      </p>
-
-      <div id="gallery" class="gallery"></div>
-    </section>
-
-    <section class="letter-section">
-      <div class="letter-card">
-        <h2>Untuk Mbak Riris 💖</h2>
-
-        <div id="typedText"></div>
-      </div>
-    </section>
-
-    <section class="closing">
-      <h2>Sekarang giliran Mbak untuk bahagia ✨</h2>
-
-      <p>
-        Semoga usia 25 membawa lebih banyak ketenangan,
-        kesehatan, kebahagiaan, dan orang-orang baik.
-      </p>
-
-      <p class="signature">
-        Dengan sayang,<br>
-        adikmu 🤍
-      </p>
-    </section>
-
-  </main>
-
-  <div id="modal" class="modal">
-    <span id="closeModal">&times;</span>
-    <img id="modalImg" src="" alt="">
-    <p id="modalCaption"></p>
-  </div>
-
-  <audio id="music" loop>
+  <!-- Musik -->
+  <audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mpeg">
   </audio>
 
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <!-- Bintang -->
+  <div class="stars"></div>
+
+  <!-- ========================= -->
+  <!-- OPENING -->
+  <!-- ========================= -->
+
+  <section id="opening" class="screen active">
+
+    <div class="opening-content">
+
+      <p class="opening-small">
+        Untuk perempuan terkuat yang aku kenal
+      </p>
+
+      <h1>
+        Selamat Ulang Tahun ke-25
+        <br>
+        Mbak Riris 🤍
+      </h1>
+
+      <p class="opening-desc">
+        Ada sesuatu yang ingin aku berikan untukmu.
+      </p>
+
+      <button id="startBtn">
+        💌 Buka Hadiahmu
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- 25 TAHUN -->
+  <!-- ========================= -->
+
+  <section id="intro25" class="screen hidden">
+
+    <div class="intro-box">
+
+      <h2>25 Tahun</h2>
+
+      <div class="numbers">
+
+        <div class="number-card">
+          <span>25</span>
+          <p>Tahun</p>
+        </div>
+
+        <div class="number-card">
+          <span>300</span>
+          <p>Bulan</p>
+        </div>
+
+        <div class="number-card">
+          <span>9.131</span>
+          <p>Hari</p>
+        </div>
+
+        <div class="number-card">
+          <span>219.144</span>
+          <p>Jam</p>
+        </div>
+
+      </div>
+
+      <p class="intro-text">
+        Dan selama itu pula,
+        banyak orang beruntung karena pernah mengenal Mbak Riris.
+      </p>
+
+      <button id="toScrapbook">
+        ✨ Lihat Kenangan Kita
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- SCRAPBOOK -->
+  <!-- ========================= -->
+
+  <section id="scrapbook" class="screen hidden">
+
+    <div class="section-title">
+      <h2>📸 Scrapbook Kenangan</h2>
+      <p>
+        Klik foto mana saja untuk membuka kenangannya.
+      </p>
+    </div>
+
+    <div id="scrapbookGallery" class="scrapbook-gallery">
+
+      <!-- otomatis dari JS -->
+
+    </div>
+
+    <div class="next-section">
+      <button id="toJar">
+        🏺 Lanjut ke Memory Jar
+      </button>
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- MEMORY JAR -->
+  <!-- ========================= -->
+
+  <section id="memoryJarSection" class="screen hidden">
+
+    <div class="section-title">
+      <h2>🏺 Memory Jar</h2>
+
+      <p>
+        Sebelum lanjut, ada beberapa harapan kecil
+        yang ingin aku simpan untuk Mbak Riris.
+      </p>
+    </div>
+
+    <div class="jar-container">
+
+      <div id="memoryJar" class="jar">
+        🏺
+      </div>
+
+      <div id="memoryMessage" class="memory-message">
+        Klik toplesnya 🤍
+      </div>
+
+    </div>
+
+    <div class="next-section">
+      <button id="toLetter">
+        💌 Buka Surat
+      </button>
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- SURAT -->
+  <!-- ========================= -->
+
+  <section id="letterSection" class="screen hidden">
+
+    <div class="section-title">
+      <h2>💌 Untuk Mbak Riris</h2>
+    </div>
+
+    <div id="envelope" class="envelope">
+
+      <div class="envelope-front">
+        📨
+        <p>Untuk Mbak Riris</p>
+      </div>
+
+    </div>
+
+    <div id="letterContainer" class="letter-container hidden">
+
+      <div class="letter-paper">
+
+        <p id="typedLetter"></p>
+
+      </div>
+
+    </div>
+
+    <div class="next-section">
+      <button id="toSecret">
+        🤍 Jangan Klik
+      </button>
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- SECRET -->
+  <!-- ========================= -->
+
+  <section id="secretSection" class="screen hidden">
+
+    <div class="secret-box">
+
+      <h2>🤍</h2>
+
+      <div id="secretText">
+
+      </div>
+
+      <button id="toClosing">
+        🌅 Lanjut
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- PENUTUP -->
+  <!-- ========================= -->
+
+  <section id="closing" class="screen hidden">
+
+    <div class="closing-box">
+
+      <h2>
+        Selamat Ulang Tahun, Mbak Riris 🌷
+      </h2>
+
+      <p>
+        Selama ini Mbak Riris sudah menjadi tempat pulang bagi banyak orang.
+      </p>
+
+      <p>
+        Sekarang semoga Mbak Riris juga menemukan seseorang yang membuat Mbak Riris merasa pulang.
+      </p>
+
+      <p>
+        Semoga lebih banyak hal baik menemukanmu.
+      </p>
+
+      <div class="signature">
+        Dengan penuh sayang,
+        <br>
+        Adikmu 🤍
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- MODAL FOTO -->
+  <!-- ========================= -->
+
+  <div id="photoModal" class="modal">
+
+    <span id="closeModal">&times;</span>
+
+    <div class="modal-content">
+
+      <img id="modalImg" src="" alt="">
+
+      <p id="modalCaption"></p>
+
+    </div>
+
+  </div>
+
   <script src="script.js"></script>
 
 </body>

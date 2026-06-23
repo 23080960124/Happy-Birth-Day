@@ -250,6 +250,13 @@ font-size:1.1rem;
   font-size:1.5rem;
 }
 
+.caption{
+  margin-top:15px;
+  text-align:center;
+  font-family:"Caveat",cursive;
+  font-size:1.4rem;
+  line-height:1.4;
+}
 /* ===================== */
 /* NEXT BUTTON */
 /* ===================== */
@@ -276,6 +283,18 @@ font-size:1.1rem;
 
 .jar:hover{
   transform:scale(1.08);
+}
+
+.jarHint{
+
+display:block;
+
+margin-top:15px;
+
+font-size:.9rem;
+
+opacity:.7;
+
 }
 
 .memory-message{

@@ -1,106 +1,106 @@
-const openBtn = document.getElementById("openBtn");
-const content = document.getElementById("content");
-const music = document.getElementById("music");
-const gallery = document.getElementById("gallery");
-const countdown = document.getElementById("countdown");
+// ===========================
+// DATA FOTO
+// ===========================
 
-function updateCountdown() {
-  const target = new Date("2026-07-09");
-  const now = new Date();
+const captions = [
+"Terima kasih sudah selalu ada.",
+"Rumah tidak selalu tentang tempat.",
+"Aku beruntung tumbuh bersamamu.",
+"Hari biasa yang menjadi kenangan.",
+"Terima kasih karena tidak pernah menyerah.",
+"Salah satu alasan aku percaya bahwa semuanya akan baik-baik saja.",
+"Senyum yang selalu berhasil menenangkan.",
+"Momen kecil yang ingin aku simpan lebih lama.",
+"Aku bangga punya Mbak seperti kamu.",
+"Tempat pulang favoritku.",
+"Terima kasih sudah bertahan sejauh ini.",
+"Tidak semua pahlawan memakai jubah.",
+"Kadang aku lupa mengatakannya, tapi aku sangat bersyukur memilikimu.",
+"Kenangan sederhana yang selalu hangat.",
+"Bahagia terus ya, Mbak.",
+"Perempuan terkuat yang pernah aku kenal.",
+"Banyak hal berubah, tapi syukurlah kita masih di sini.",
+"Aku suka versi hidup yang ada Mbaknya.",
+"Terima kasih sudah menjadi kakak, teman, sekaligus keluarga.",
+"Salah satu foto favoritku, salah satu orang favoritku.",
+"Semoga dunia selalu memperlakukanmu dengan baik.",
+"Hari ini, besok, dan seterusnya, semoga bahagia selalu menyertaimu.",
+"Ada banyak hal yang tidak sempat aku ucapkan, tapi selalu aku rasakan.",
+"Tawa yang ingin aku dengar lebih sering.",
+"Semoga langkahmu selalu dipenuhi kemudahan.",
+"Aku tahu hidup tidak selalu mudah, tapi Mbak selalu berhasil melaluinya.",
+"Untuk semua lelah yang tidak pernah diceritakan.",
+"Untuk semua kuat yang tidak pernah diperlihatkan.",
+"Semoga lebih banyak hal baik menemukanmu.",
+"Semoga selalu dipertemukan dengan orang-orang baik.",
+"Aku akan selalu mendukung kebahagiaanmu.",
+"Sekarang giliran Mbak memikirkan kebahagiaan Mbak sendiri.",
+"Terima kasih sudah menjadi rumah bagi kami.",
+"Selamat ulang tahun, Mbak Riris. Kami sayang Mbak. 🤍"
+];
 
-  const diff = target - now;
+// ===========================
+// MEMORY JAR
+// ===========================
 
-  const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+const memoryMessages = [
 
-  countdown.textContent =
-    `${days} hari lagi menuju hari spesial Mbak Riris ✨`;
-}
+"Semoga di usia yang baru ini, Mbak Riris selalu dilimpahi kebahagiaan yang tulus dan kedamaian di hati.",
 
-updateCountdown();
+"Semoga Allah selalu menjaga kesehatan Mbak Riris, memberikan umur yang berkah, dan raga yang selalu kuat.",
 
-const captions = {
-  1: "Terima kasih sudah selalu ada.",
-  2: "Rumah tidak selalu tentang tempat.",
-  3: "Aku beruntung tumbuh bersamamu.",
-  4: "Hari biasa yang menjadi kenangan.",
-  5: "Terima kasih karena tidak pernah menyerah.",
-  6: "Salah satu alasan aku percaya bahwa semuanya akan baik-baik saja.",
-  7: "Senyum yang selalu berhasil menenangkan.",
-  8: "Momen kecil yang ingin aku simpan lebih lama.:,
-  9: "Aku bangga punya Mbak seperti kamu.",
-  10: "Tempat pulang favoritku.",
-  11: "Terima kasih sudah bertahan sejauh ini.",
-  12: "Tidak semua pahlawan memakai jubah.",
-  13: "Kadang aku lupa mengatakannya, tapi aku sangat bersyukur memilikimu.",
-  14: "Kenangan sederhana yang selalu hangat.",
-  15: "Bahagia terus ya, Mbak.",
-  16: "Perempuan terkuat yang pernah aku kenal.",
-  17: "Banyak hal berubah, tapi syukurlah kita masih di sini.",
-  18: "Aku suka versi hidup yang ada Mbaknya.",
-  19: "Terima kasih sudah menjadi kakak, teman, sekaligus keluarga.",
-  20: "Salah satu foto favoritku, salah satu orang favoritku.",
-  21: "Semoga dunia selalu memperlakukanmu dengan baik.",
-  22: "Hari ini, besok, dan seterusnya, semoga bahagia selalu menyertaimu.",
-  23: "Ada banyak hal yang tidak sempat aku ucapkan, tapi selalu aku rasakan.",
-  24: "Tawa yang ingin aku dengar lebih sering.",
-  25: "Semoga langkahmu selalu dipenuhi kemudahan.",
-  26: "Aku tahu hidup tidak selalu mudah, tapi Mbak selalu berhasil melaluinya.",
-  27: "Untuk semua lelah yang tidak pernah diceritakan.",
-  28: "Untuk semua kuat yang tidak pernah diperlihatkan.",
-  29: "Semoga lebih banyak hal baik menemukanmu.",
-  30: "Semoga selalu dipertemukan dengan orang-orang baik.",
-  31: "Aku akan selalu mendukung kebahagiaanmu.",
-  32: "Sekarang giliran Mbak memikirkan kebahagiaan Mbak sendiri.",
-  33: "Terima kasih sudah menjadi rumah bagi kami.",
-  34: "Selamat ulang tahun, Mbak Riris. Kami sayang Mbak. 🤍",
-};
+"Terima kasih ya Mbak Riris sudah selalu menjadi pelindung dan panutan yang hebat buat aku.",
 
-for (let i = 1; i <= 34; i++) {
+"Semoga semua kebaikan Mbak Riris dibalas berkali-kali lipat.",
 
-  const card = document.createElement("div");
-  card.className = "photo-card";
+"Semoga Mbak Riris selalu dikelilingi oleh orang-orang tulus yang menyayangi dan menghargai Mbak Riris apa adanya.",
 
-  const rotate = Math.floor(Math.random() * 8) - 4;
-  card.style.setProperty("--rotate", `${rotate}deg`);
+"Semoga setiap air mata kesedihan diganti dengan ribuan senyuman bahagia.",
 
-  const img = document.createElement("img");
-  img.src = `assets/images/foto${i}.jpeg`;
+"Semoga Mbak Riris selalu dilindungi dari segala hal yang melelahkan hati dan pikiran.",
 
-  const caption = document.createElement("p");
-  caption.textContent = captions[i] || "🤍";
+"Semoga semua usaha, pekerjaan, dan perjuangan Mbak Riris membuahkan hasil yang manis.",
 
-  card.appendChild(img);
-  card.appendChild(caption);
+"Semoga career goals dan impian besar yang selama ini Mbak Riris simpan dimudahkan jalannya.",
 
-  card.addEventListener("click", () => {
-    modal.style.display = "block";
-    modalImg.src = img.src;
-    modalCaption.textContent = caption.textContent;
-  });
+"Semoga rezeki Mbak Riris makin mengalir deras, berkah, dan membawa banyak kebaikan.",
 
-  gallery.appendChild(card);
-}
+"Semoga satu per satu mimpi yang Mbak Riris tulis bisa terwujud nyata.",
 
-openBtn.addEventListener("click", async () => {
+"Semoga Mbak Riris selalu diberikan kemudahan dalam mengambil keputusan besar dalam hidup.",
 
-  content.classList.remove("hidden");
+"Di mana pun Mbak Riris berada, semoga selalu menjadi sosok yang membawa dampak baik.",
 
-  await music.play().catch(() => {});
+"Semoga Kamu tidak pernah meragukan kemampuan diri sendiri.",
 
-  confetti({
-    particleCount: 180,
-    spread: 120,
-    origin: { y: 0.6 }
-  });
+"Semoga Kamu lebih banyak meluangkan waktu untuk mencintai diri sendiri.",
 
-  content.scrollIntoView({
-    behavior: "smooth"
-  });
+"Semoga Kamu selalu memiliki kekuatan untuk melewati hari-hari yang berat.",
 
-  startTyping();
-});
+"Semoga Kamu selalu menemukan alasan untuk bersyukur setiap pagi.",
 
-const message = `Untuk Mbak Riris,
+"Semoga semua lelahmu dibayar tuntas dengan hasil yang membuatmu bangga.",
+
+"Semoga Kamu berani melangkah menuju hal-hal yang benar-benar Kamu inginkan.",
+
+"Semoga Kamu makin sabar menghadapi adikmu yang kadang random ini. 🤭",
+
+"Semoga stresnya berkurang dan jalan-jalannya diperbanyak.",
+
+"Semoga rezekinya makin lancar biar adiknya sering ditraktir. 😆",
+
+"Semoga urusan skincare dan belanja selalu ketemu promo besar.",
+
+"Semoga Kamu tetap menjadi tempat curhat paling nyaman di rumah.",
+
+"Yang paling penting, semoga Kamu selalu bahagia lahir dan batin. 🤍"
+];
+
+// ===========================
+// SURAT
+// ===========================
+
+const letterText = `Untuk Mbak Riris,
 
 Selamat ulang tahun, Mbak...
 
@@ -136,40 +136,245 @@ Semoga langkah Mbak Riris selalu didekatkan dengan jalan kebaikan.
 
 Dan semoga, mulai hari ini dan seterusnya, lebih banyak hal baik yang datang kepada Mbak Riris.
 
+Selama ini mungkin banyak orang melihat Mbak Riris sebagai sosok yang kuat.
+
+Tapi aku berharap, di usia yang baru ini, Mbak Riris tidak hanya kuat.
+
+Aku berharap Mbak Riris juga bahagia.
+
 Terima kasih karena sudah menjadi Mbak Riris.
 
 Kami sayang Mbak Riris. 🤍`;
 
-const typedText = document.getElementById("typedText");
+// ===========================
+// ELEMENT
+// ===========================
 
-function startTyping() {
+const music = document.getElementById("bgMusic");
+const scrapbook = document.getElementById("scrapbookGallery");
 
-  let i = 0;
-
-  const typing = setInterval(() => {
-
-    typedText.textContent += message.charAt(i);
-
-    i++;
-
-    if (i >= message.length) {
-      clearInterval(typing);
-    }
-
-  }, 30);
-}
-
-const modal = document.getElementById("modal");
+const modal = document.getElementById("photoModal");
 const modalImg = document.getElementById("modalImg");
 const modalCaption = document.getElementById("modalCaption");
 const closeModal = document.getElementById("closeModal");
 
-closeModal.addEventListener("click", () => {
-  modal.style.display = "none";
+// ===========================
+// NAVIGATION
+// ===========================
+
+function showSection(id){
+
+document.querySelectorAll(".screen").forEach(section=>{
+section.classList.add("hidden");
 });
 
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
+document.getElementById(id).classList.remove("hidden");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
 });
+
+}
+
+document.getElementById("startBtn").onclick = () => {
+music.play();
+showSection("intro25");
+};
+
+document.getElementById("toScrapbook").onclick = () => {
+showSection("scrapbook");
+};
+
+document.getElementById("toJar").onclick = () => {
+showSection("memoryJarSection");
+};
+
+document.getElementById("toLetter").onclick = () => {
+showSection("letterSection");
+};
+
+document.getElementById("toSecret").onclick = () => {
+showSection("secretSection");
+startSecret();
+};
+
+document.getElementById("toClosing").onclick = () => {
+showSection("closing");
+};
+
+// ===========================
+// SCRAPBOOK
+// ===========================
+
+for(let i=1;i<=34;i++){
+
+const card = document.createElement("div");
+
+card.className = "photo-card";
+
+card.style.transform =
+`rotate(${Math.floor(Math.random()*12)-6}deg)`;
+
+card.innerHTML = `
+<img src="assets/images/foto${i}.jpeg">
+<p>Kenangan #${i}</p>
+`;
+
+card.addEventListener("click",()=>{
+
+modal.style.display = "flex";
+
+modalImg.src =
+`assets/images/foto${i}.jpeg`;
+
+modalCaption.textContent =
+captions[i-1];
+
+});
+
+scrapbook.appendChild(card);
+
+}
+
+closeModal.onclick = ()=>{
+modal.style.display="none";
+};
+
+modal.onclick = (e)=>{
+if(e.target===modal){
+modal.style.display="none";
+}
+};
+
+// ===========================
+// MEMORY JAR
+// ===========================
+
+let memoryIndex = 0;
+
+const memoryJar =
+document.getElementById("memoryJar");
+
+const memoryMessage =
+document.getElementById("memoryMessage");
+
+memoryJar.addEventListener("click",()=>{
+
+memoryMessage.textContent =
+memoryMessages[memoryIndex];
+
+memoryIndex++;
+
+if(memoryIndex >= memoryMessages.length){
+memoryIndex = 0;
+}
+
+});
+
+// ===========================
+// ENVELOPE
+// ===========================
+
+document.getElementById("envelope")
+.addEventListener("click",()=>{
+
+document
+.getElementById("letterContainer")
+.classList.remove("hidden");
+
+typeLetter();
+
+});
+
+// ===========================
+// TYPE LETTER
+// ===========================
+
+let typed = false;
+
+function typeLetter(){
+
+if(typed) return;
+
+typed = true;
+
+const target =
+document.getElementById("typedLetter");
+
+let i = 0;
+
+function typing(){
+
+if(i < letterText.length){
+
+target.innerHTML +=
+letterText.charAt(i);
+
+i++;
+
+setTimeout(typing,25);
+
+}
+
+}
+
+typing();
+
+}
+
+// ===========================
+// SECRET
+// ===========================
+
+const secretLines = [
+
+"Kalau Ayah masih ada hari ini...",
+
+"Aku yakin Ayah akan bangga melihat Mbak Riris.",
+
+"Karena Mbak Riris berhasil membawa kita sejauh ini.",
+
+"Terima kasih sudah bertahan.",
+
+"Terima kasih sudah menjaga kami.",
+
+"Aku bangga menjadi adik Mbak Riris. 🤍"
+
+];
+
+function startSecret(){
+
+const secretBox =
+document.getElementById("secretText");
+
+secretBox.innerHTML = "";
+
+let i = 0;
+
+function showLine(){
+
+if(i < secretLines.length){
+
+const p =
+document.createElement("p");
+
+p.textContent =
+secretLines[i];
+
+p.style.marginBottom =
+"25px";
+
+secretBox.appendChild(p);
+
+i++;
+
+setTimeout(showLine,2500);
+
+}
+
+}
+
+showLine();
+
+}

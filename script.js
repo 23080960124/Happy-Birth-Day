@@ -178,8 +178,19 @@ behavior:"smooth"
 }
 
 document.getElementById("startBtn").onclick = () => {
+
 music.play();
+
+confetti({
+  particleCount: 150,
+  spread: 90,
+  origin: { y: 0.6 }
+});
+
+setTimeout(()=>{
 showSection("intro25");
+},1200);
+
 };
 
 document.getElementById("toScrapbook").onclick = () => {
@@ -376,5 +387,64 @@ setTimeout(showLine,2500);
 }
 
 showLine();
+
+}
+
+function createPetal(){
+
+const petal =
+document.createElement("div");
+
+petal.className =
+"petal";
+
+petal.innerHTML =
+Math.random() > 0.5 ? "🌸" : "🌷";
+
+petal.style.left =
+Math.random()*100 + "vw";
+
+petal.style.animationDuration =
+(8 + Math.random()*8) + "s";
+
+document
+.getElementById("petals")
+.appendChild(petal);
+
+setTimeout(()=>{
+petal.remove();
+},16000);
+
+}
+
+setInterval(createPetal,1200);
+
+const countdown =
+document.getElementById("countdown");
+
+const birthday =
+new Date("2026-07-09");
+
+const today =
+new Date();
+
+const diff =
+birthday - today;
+
+const days =
+Math.ceil(
+diff /
+(1000*60*60*24)
+);
+
+if(days > 0){
+
+countdown.textContent =
+`${days} hari lagi menuju hari spesial Mbak Riris ✨`;
+
+}else{
+
+countdown.textContent =
+"🎂 Hari ini hari spesial Mbak Riris!";
 
 }
